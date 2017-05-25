@@ -22,6 +22,8 @@ public function addoperadorAction(Request $request)
              {
               $this->get('session')->getFlashBag()->add('mensaje','Acceso Bloqueado');
               return $this-> redirect($this->generateUrl('main_homepage')); //redirecciona al login
-             }          
+             }  
+
+             //ENTRE LA ESPADA Y LA PARED        
 
     }
