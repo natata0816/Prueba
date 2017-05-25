@@ -1,4 +1,4 @@
-public function addoperadorAction(Request $request)
+public function CHUCKoperator(Request $request)
     {
        
 
