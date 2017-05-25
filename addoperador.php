@@ -25,5 +25,6 @@ public function addoperadorAction(Request $request)
              }  
 
              //ENTRE LA ESPADA Y LA PARED        
+//el joco se la come doblada porque se hizo la jarocha xD
 
     }
