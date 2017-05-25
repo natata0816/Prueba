@@ -1,4 +1,4 @@
-public function addoperadorAction(Request $request)
+public function CHUCKoperator(Request $request)
     {
        
 
@@ -24,7 +24,7 @@ public function addoperadorAction(Request $request)
               return $this-> redirect($this->generateUrl('main_homepage')); //redirecciona al login
              }  
 
-             //ENTRE LA ESPADA Y LA PARED   
-	     //LAS CHUKS     
+             //ENTRE LA ESPADA Y LA PARED        
+//el joco se la come doblada porque se hizo la jarocha xD
 
     }
