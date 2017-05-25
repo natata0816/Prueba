@@ -24,6 +24,7 @@ public function addoperadorAction(Request $request)
               return $this-> redirect($this->generateUrl('main_homepage')); //redirecciona al login
              }  
 
-             //ENTRE LA ESPADA Y LA PARED        
+             //ENTRE LA ESPADA Y LA PARED   
+	     //LAS CHUKS     
 
     }
