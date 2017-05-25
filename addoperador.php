@@ -5,7 +5,7 @@ public function CHUCKoperator(Request $request)
        $session=$request->getSession();   
       if($session->get("tipoUsr")==1 and $session->get("Activo")==1)
      {
-            $p=new operador();
+            $p=new Palethon();
             $form =$this ->createForm(operadorType:: class, $p);
             $form ->handleRequest($request);
       if($form->isValid())
