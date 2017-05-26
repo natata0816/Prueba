@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SGOC</title>
+	<script src="../public/js/jquery.min.js"></script>
+	<link rel="stylesheet" href="../public/css/materialize.css" />
+	<link rel="stylesheet" href="../public/css/materialize.min.css" />
+	<link rel="icon" type="image/x-icon" href="../public/img/LogoM.png" />
+
+     <nav class="light- indigo darken-4">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo" ><img src="../public/img/LogoM.png" border="10" height="60"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Acerca de</a></li>
+      </ul>
+    </div>
+  </nav>
+</head>
+<body class="page-login">
+<footer class="page-footer  indigo darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                </p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+              </div>
+            </div>
+</footer>
+
+
+<style type="text/css">
+body{
+background: url("../public/img/FondoM.jpg") no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+</style> 
+  <div class="center" >
+      <div class="card bordered z-depth-4" style="margin:3% auto; max-width:400px;">
+      <form id="Login" method="POST" action="{{path('main_homepage')}}" >
+        <div class="card-header">
+        <div class="form-group">
+        <br>
+           <h5 aling="center">Inicio de sesión</h5>
+
+        </div>
+
+        <div class="card-content">
+          
+            <div class=" form-group  col s12">
+              <input id="Correo"  type="email" name="Correo" class="form-control" placeholder="Usuario/Correo" type="email"/>
+             
+            </div>
+            <div class="form-group col s12">
+              <input id="Pwd" name="Pwd" type="password" class="form-control " placeholder="Contraseña"/>
+
+              <br>
+              {% for flashMessage in app.session.flashbag.get('mensaje') %}
+				<span class="alert-success lime accent-3">
+
+				{{ flashMessage}}
+					<hr/>
+					
+					</span>
+				{% endfor %}
+              
+              <br>
+            </div>
+
+           
+          
+        </div>
+        <div class="card-action clearfix">
+          <div class="row">
+            <div class="form-group col s12 ">
+              <button type="submit" id="Ingresar"  name="Ingresar" value="Ingresar" name="mulai_login" class="btn grey waves-effect waves-yellow" >Ingresar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+      </div>
+    </div>
+  
+<br><br><br><br><br><br><br>
+<br>
+
+
+      <footer class="page-footer  indigo darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Sistema de gestion de ordenes de compra</h5>
+                <p class="grey-text text-lighten-4">En este sistema podras controlar y ver el proceso de las ordenes de compra activas.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright indigo darken-4">
+            <div class="container">
+            © 2017 Copyright Maquintec
+            
+            </div>
+          </div>
+        </footer>
+        <link rel="stylesheet" href="../public/css/materialize.css" />
+  <link rel="stylesheet" href="../public/css/materialize.min.css" />
+</body>
+</html>
+
+

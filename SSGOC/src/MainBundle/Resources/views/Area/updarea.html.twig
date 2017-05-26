@@ -1,0 +1,24 @@
+
+{% extends 'base.html.twig' %} 
+{% block internanav %}
+ 
+<ol class="breadcrumb">
+  <li><a href="{{asset('app_dev.php/Area')}}">Area</a></li>
+  <li><a href="{{asset('app_dev.php/Area')}}">Listado</a></li>
+  <li><a>Actualiza un Registro</a></li>
+ </ol>
+
+  <br> 
+{% endblock %}
+{% block contenido %}
+<div class="" style="margin:1% auto; max-width:1200px;">
+<div class="card-panel z-depth-4">
+<h3 class="thin" align="center">Actualización de datos del Area</h3>
+<br><br><br>
+  <div class="row">
+    {{form(form)}}
+    {{form_end(form)}}
+  </div>
+</div>
+</div>    
+{% endblock %}

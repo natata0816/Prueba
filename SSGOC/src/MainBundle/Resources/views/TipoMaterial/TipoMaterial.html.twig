@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %} 
+{% block internanav %}
+ 
+<ol class="breadcrumb">
+  <li><a href="{{asset('app_dev.php/tiposmate')}}">Materiales</a></li>
+  <li><a href="{{asset('app_dev.php/tiposmate')}}">Listado</a></li>
+ </ol>
+ <br>
+  
+{% endblock %}
+{% block contenido %}
+
+
+<form class="col s10" style="margin:2% auto; max-width:900px;">
+<div class="card-panel z-depth-4">
+ <div>
+        <span class="btn orange accent-4 z-depth-0">N° de Elementos: {{pagination.getTotalItemCount }}</span>
+    </div>
+<h3 class="thin" align="center">Listado de tipos de materiales</h3>
+<div class="center">
+ {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <span class="alert-success lime accent-3">
+
+        {{ flashMessage}}
+          
+          
+          </span>
+        {% endfor %}
+{% for flashMessage in app.session.flashbag.get('mensaje') %}
+<span class="alert-success">
+{{ flashMessage}}
+
+{% endfor %}
+<hr/>
+<table class="highlight">
+        <thead>
+          <tr>
+              <th></th>
+              <th>Nombre</th>
+              <th>&nbsp&nbsp&nbsp Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for pagination in pagination %}
+          <tr>
+            <td style="visibility:hidden;"> {{pagination.idTipoM}} </td>
+            <td> {{pagination.nomTipo}} </td>
+            <td>
+              &nbsp &nbsp<a href="{{asset('app_dev.php/updtmat')}}/{{(pagination.idTipoM)}}" class="btn blue btn-floating  z-depth-0 tooltipped" data-position="left" data-delay="50" data-tooltip="Edita este registro"><i class="material-icons">mode_edit</i></a>&nbsp &nbsp &nbsp     
+              <a href="{{asset('app_dev.php/deltmat')}}/{{(pagination.idTipoM)}}" class="btn btn-floating red z-depth-0 tooltipped" data-position="right" data-delay="50" data-tooltip="Elimina este registro"><i class="material-icons">delete</i></a>
+            </td>
+          </tr>
+          {%  endfor %}
+        </tbody>
+      </table>
+      <div class="row">
+             {{ knp_pagination_render(pagination) }}
+          </div>
+      </form>
+
+      </div>
+
+
+      <div class="fixed-action-btn ">
+    <a href="{{asset('app_dev.php/addtmat')}}" class="btn-floating btn-large waves-effect waves-light orange z-depth-4 "><i class="material-icons">add</i></a>  
+    </div>
+
+ {% set fecha = date('2017-05-20')%}
+ {% set fechahoy = date('now')%} 
+ {% set diferencia = fecha.diff(date('now')) %}
+     {% if fecha >= fechahoy %}
+         {% set diasRestantes = diferencia.days +1 %}
+            {% if diasRestantes == 1 %}
+             <a class="btn orange z-depth-0">Resta 1 dia</a>
+
+            {% else %}
+             {% if diasRestantes >5 %}
+            <a class="btn green z-depth-0">Restan {{ diasRestantes }} dias</a>
+             {% else %}
+              <a class="btn orange z-depth-0">Restan {{ diasRestantes }} dias</a>   
+            {% endif %}
+            {% endif %}
+    {% else %}
+          {% set diasRestantes = diferencia.days %}
+            {% if diasRestantes == 1 %}
+             <a class="btn red z-depth-0">Vencio hace 1 dia</a>
+            {% else %}
+               <a class="btn red z-depth-0">Vencio hace {{ diasRestantes }} dias</a>
+            {% endif %}
+    {% endif %}
+{% endblock %}

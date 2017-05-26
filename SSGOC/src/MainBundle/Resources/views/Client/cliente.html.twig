@@ -1,0 +1,83 @@
+
+{% extends 'base.html.twig' %} 
+{% block internanav %}
+ 
+   <ol class="breadcrumb">
+  <li><a href="{{asset('app_dev.php/cliente')}}">Area</a></li>
+  <li><a href="{{asset('app_dev.php/cliente')}}">Listado</a></li>
+  
+ </ol>
+  
+{% endblock %}
+
+{% block contenido %}
+
+
+<form class="col s10" style="margin:2% auto; max-width:1400px;">
+
+<div class="card-panel z-depth-5">
+    <div>
+        <span class="btn orange accent-4 z-depth-0">N° de Elementos: {{pagination.getTotalItemCount }}</span>
+    </div>
+    <h3 class="thin" align="center">Listado de clientes registrados</h3>
+    <div class="center">
+     {% for flashMessage in app.session.flashbag.get('mensaje') %}
+            <span class="alert-success lime accent-3">
+            {{ flashMessage}}
+              </span>
+            {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+    <span class="alert-success">
+    {{ flashMessage}}
+
+    {% endfor %}
+    <hr/>
+    <table class="responsive-table">
+            <thead>
+              <tr>
+                  <th>Codigo</th>
+                  <th>RFC</th>
+                  <th>Nombre</th>
+                  <th>Razon Social</th>
+                  <th>Dirección</th>
+                  <th>Teléfono</th>
+                  <th>Codigo Postal</th>
+                  <th>Acciones </th>
+              </tr>
+            </thead>
+
+            <tbody>
+            {% for pagination in pagination %}
+            
+              <tr>
+                <td> {{pagination.CodCte}} </td>
+                <td> {{pagination.rFCCte}} </td>
+                <td> {{pagination.nomCte}} </td>
+                <td> {{pagination.razSoc}} </td>
+                <td> {{pagination.dirCte}} </td>
+                <td> {{pagination.telCte}} </td>
+                <td> {{pagination.codPostCte}} </td>
+                <td>
+                  &nbsp &nbsp<a href="{{asset('app_dev.php/updcte')}}/{{(pagination.rFCCte)}}" class="btn btn-floating  z-depth-0 tooltipped" data-position="left" data-delay="50" data-tooltip="Edita este registro"><i class="material-icons">mode_edit</i></a>   &nbsp &nbsp &nbsp     
+                  <a href="{{asset('app_dev.php/delcte')}}/{{(pagination.rFCCte)}}" class="btn btn-floating deep-orange accent-4 z-depth-0 tooltipped" data-position="right" data-delay="50" data-tooltip="Elimina este registro"><i class="material-icons">delete</i></a>
+                </td>
+              </tr>
+              {%  endfor %}
+              
+            </tbody>
+          </table>
+          <div class="row">
+             {{ knp_pagination_render(pagination) }}
+          </div>
+          </div>
+          
+      </form>
+
+      </div>
+      <div class="fixed-action-btn ">
+    <a href="addcte" class="btn-floating btn-large waves-effect waves-light orange z-depth-4 "><i class="material-icons">add</i></a>
+
+        
+  </div>
+  
+{% endblock %}

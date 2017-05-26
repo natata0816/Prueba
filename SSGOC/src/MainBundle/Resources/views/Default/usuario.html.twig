@@ -1,0 +1,89 @@
+
+{% extends '::base.html.twig' %} 
+{% block internanav %}
+
+ <ol class="breadcrumb ">
+  <li><a>Usuarios</a></li>
+  <li><a href="usuario">Listado</a></li>
+ </ol>
+
+{% endblock %}
+{% block contenido %}
+
+
+<form class="col s10" style="margin:0% auto; max-width:1400px;">
+<div class="card-panel z-depth-5">
+    <div>
+        <span class="btn orange accent-4 z-depth-0">N° de Elementos: {{pagination.getTotalItemCount }}</span>
+    </div>
+    <h3 class="thin" align="center">Listado de usuarios registrados</h3>
+    <div class="center">
+     {% for flashMessage in app.session.flashbag.get('mensaje') %}
+            <span class="alert-success lime accent-3">
+            {{ flashMessage}}
+              </span>
+            {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+    <span class="alert-success">
+    {{ flashMessage}}
+
+    {% endfor %}
+    <hr/>
+    <table class="responsive-table">
+            <thead>
+              <tr>
+                  <th>Nombre</th>
+                  <th>Correo</th>
+                  <th>Rol</th>
+                  <th>Estatus</th>
+                  <th>Acciones </th>
+              </tr>
+            </thead>
+
+            <tbody>
+            {% for pagination in pagination %}
+            
+              <tr>
+                <td> {{pagination.NomUsr}} </td>
+                <td> {{pagination.Correo}} </td>
+               <td> {% set rol=pagination.Rol %} 
+                {% if rol == 'Administrador' %}
+                  <a class="btn blue z-depth-0 ">admin<i class="material-icons right">done</i></a>
+                 {% else %}
+                 {{pagination.rol}}
+                 {% endif %}
+                </td>
+                <td> {% set estatus = pagination.Actividad %} 
+                      {% if estatus == 'Activado' %}
+                      <a class="btn green z-depth-0 ">{{pagination.Actividad}}<i class="material-icons right"> verified_user</i></a>
+                      {% else %}
+                      <a class="btn red z-depth-0">&nbspInactivo <i class="material-icons right"> report_problem</i> </a>
+                      {% endif %}
+                </td>
+                <td>
+                 <a href="{{asset('app_dev.php/actusr')}}/{{(pagination.correo)}}" class="btn blue btn-floating   z-depth-0 tooltipped" data-position="left" data-delay="50" data-tooltip="Edita este registro"><i class="material-icons">mode_edit</i></a> &nbsp &nbsp&nbsp &nbsp    
+                  <a href="{{asset('app_dev.php/delusr')}}/{{(pagination.correo)}}" class="btn btn-floating deep-orange accent-4 z-depth-0 tooltipped" data-position="right" data-delay="50" data-tooltip="Elimina este registro"><i class="material-icons">delete</i></a>
+                </td>
+              </tr>
+              {%  endfor %}
+              
+            </tbody>
+          </table>
+          <div class="row">
+          
+             {{ knp_pagination_render(pagination) }}
+          
+         
+          </div>
+          </div>
+          
+          </form>
+
+          </div>
+          <div class="fixed-action-btn ">
+        <a href="addusr" class="btn-floating btn-large waves-effect waves-light orange z-depth-4 "><i class="material-icons">add</i></a>
+
+        
+  </div>
+ 
+{% endblock %}

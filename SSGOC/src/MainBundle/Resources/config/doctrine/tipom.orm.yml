@@ -1,0 +1,16 @@
+MainBundle\Entity\tipom:
+    type: entity
+    table: null
+    repositoryClass: MainBundle\Repository\tipomRepository
+    id:
+        idTipoM:
+            idTipoM:
+            type: integer
+            id: true
+            column: id_TipoM
+    fields:
+        nomTipo:
+            type: string
+            length: '80'
+            column: NomTipo
+    lifecycleCallbacks: {  }

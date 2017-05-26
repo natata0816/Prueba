@@ -1,0 +1,18 @@
+MainBundle\Entity\tratamiento:
+    type: entity
+    table: null
+    repositoryClass: MainBundle\Repository\tratamientoRepository
+    id:
+       idTrat:
+            id: true
+            type: integer
+            nullable: true
+            options:
+            autoincrement: true
+    fields:
+        nomTrat:
+            type: string
+            length: '80'
+            nullable: true
+            column: NomTrat
+    lifecycleCallbacks: {  }

@@ -1,0 +1,15 @@
+MainBundle\Entity\area:
+    type: entity
+    table: null
+    repositoryClass: MainBundle\Repository\areaRepository
+    id:
+        isarea:
+            id: true
+            type: integer
+            column: is_area
+    fields:
+        nomArea:
+            type: string
+            length: '80'
+            column: NomArea
+    lifecycleCallbacks: {  }

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %} 
+{% block internanav %}
+  <ol class="breadcrumb">
+  <li><a href="{{asset('app_dev.php/usuario')}}">Usuarios</a></li>
+  <li><a href="{{asset('app_dev.php/usuario')}}">Listado</a></li>
+  <li><a>Actualiza Registro</a></li>
+ </ol>
+  
+{% endblock %}
+
+{% block contenido %}
+
+<div class="" style="margin:1% auto; max-width:1200px;">
+<div class="card-panel z-depth-4">
+<h3 class="thin" align="center">Registro de usuarios</h3>
+<br><br><br>
+  <div class="row">
+    {{form(form)}}
+    {{form_end(form)}}
+
+  </div>
+</div>
+</div>
+
+
+        
+{% endblock %}
+
+

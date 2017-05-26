@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>SGOC</title>
+    <!-- Compiled and minified CSS -->
+    <link   href="{{ asset('public/css/icon.css')}}" rel="stylesheet">
+    <script src="{{ asset('public/js/jquery.min.js')}}"></script>
+    <script src="{{ asset('public/js/jquery-3.1.1.js')}}"></script>
+    <script src="{{ asset('public/js/materialize.min.js')}}"></script>
+    <link rel="stylesheet" href="{{ asset('public/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('public/css/bootstrap-theme.min.css') }}">
+  <!-- Compiled and minified JavaScript -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{{ asset('public/css/materialize.css')}}" />
+    <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css')}}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/img/LogoM.png')}}" />
+<style type="text/css">
+    body{
+background: url("{{ asset('public/img/FondoMa.jpg')}}") no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+display: flex;
+min-height: 100vh;
+    flex-direction: column;
+}
+
+  main {
+    flex: 1 0 auto;
+  }
+</style>
+        <div class="navbar-fixed ">
+            <nav class="indigo darken-4 z-depth-0 ">
+                <div class="nav-wrapper ">
+                    
+
+                <a href="{{ path('MenuA') }}" class="brand-logo " ><img src="{{ asset('public/img/LogoM.png')}}" border="10" height="60"></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down ">
+                        <li><a href="sass.html">Dibujos<i class="material-icons left">perm_media</i></a></li>
+                        <li><a href="{{ path('tratamiento')}}">Tratamientos<i class="material-icons left">invert_colors</i></a></li>
+                        <li><a href="{{ path('cliente')}}">Clientes<i class="material-icons left">contacts</i></a></li>
+                        <li><a href="{{ path('usuario')}}">Usuarios<i class="material-icons left">supervisor_account</i></a></li>
+                         <li><a href="dia.html">Cotizaciónes<i class="material-icons left">business</i></a></li>
+                        <li><a href="mobile.html">Ordenes de compra<i class="material-icons left">assignment</i></a></li>
+                         <li><a class="dropdown-button" href="#!" data-activates="drope1"><i class="material-icons left">assignment_ind</i>Empleados<i class="material-icons right">arrow_drop_down</i></a>
+                          <li><a class="dropdown-button" href="#!" data-activates="drop1"><i class="material-icons left">toll</i>Materiales<i class="material-icons right">arrow_drop_down</i></a>
+                         <li><a class="dropdown-button" href="{{ path('CloseSesion') }}" >Cerrar Sesión<i class="material-icons right">perm_identity</i></a>
+                        </li>
+                    </ul>
+            
+                </div>
+                 </nav>
+                
+        </div>
+                    <ul class="side-nav thin" id="mobile-demo">
+                         <li><a href="sass.html">Dibujos<i class="material-icons left">perm_media</i></a></li>
+                        <li><a href="{{ path('tratamiento') }}">Tratamientos<i class="material-icons left">invert_colors</i></a></li>
+                        <li><a href="{{ path('cliente') }}">Clientes<i class="material-icons left">contacts</i></a></li>
+                        <li><a href="{{ path('usuario') }}">Usuarios<i class="material-icons left">supervisor_account</i></a></li>
+                         <li><a href="collapsible.html">Cotizaciónes<i class="material-icons left">business</i></a></li>
+                        <li><a href="mobile.html">Ordenes de compra<i class="material-icons left">assignment</i></a></li>
+                         <li><a class="dropdown-button" href="#!" data-activates="drope"><i class="material-icons left">assignment_ind</i>Empleados<i class="material-icons right">arrow_drop_down</i></a>
+                          <li><a class="dropdown-button" href="#!" data-activates="drop"><i class="material-icons left">toll</i>Materiales<i class="material-icons right">arrow_drop_down</i></a>
+                         <li><a class="dropdown-button" href="{{ path('CloseSesion') }}" >Cerrar Sesión<i class="material-icons left">perm_identity</i></a>
+                        </li>
+                    </ul>
+
+                   
+                     <ul id="drop" class="dropdown-content">
+                        <li><a href="{{ path('tiposmate') }}">Tipo de material</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#!">Catálogo de materiales</a></li>
+                    </ul>
+                    <ul id="drop1" class="dropdown-content">
+                        <li><a href="{{ path('tiposmate') }}">Tipo de material</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#!">Catálogo de materiales</a></li>
+                    </ul>
+                    <ul id="drope" class="dropdown-content">
+                        <li><a href="{{ path('Area') }}">Areas</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#!">Operadores</a></li>
+                    </ul>
+                    <ul id="drope1" class="dropdown-content">
+                        <li><a href="{{ path('Area') }}">Areas</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#!">Operadores</a></li>
+                    </ul>
+
+
+                    <div id="internanav">
+                        {% block internanav %}
+
+                        {% endblock %}
+                    </div>   
+
+           
+</head>
+
+<body>
+<br>
+<div id="contenido">
+    {% block contenido %}
+
+    {% endblock %}
+</div>    
+<br>
+<br>
+<div id="Tablucha" style="margin-top: 5%;">
+    {% block Tablucha %}
+
+    {% endblock %}
+</div>    
+<br>
+
+      <footer class="page-footer blue darken-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text thin">Sistema de gestion de ordenes de compra</h5>
+                        <p class="grey-text text-lighten-4 thin">En este sistema podras controlar y ver el proceso de las ordenes de compra activas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright indigo darken-4 thin">
+                <div class="container ">
+                    © 2017 Copyright Maquintec
+                </div>
+            </div>
+        </footer>
+             <script >
+                $( document ).ready(function(){
+                        $('.dropdown-button').dropdown();
+                        $('select').material_select();
+                        $('.button-collapse').sideNav();
+                        $('.datepicker').pickadate();   
+                        $('.modal-trigger').leanModal();
+                        $('.button-collapse').sideNav();
+
+                 });
+             </script>
+    </body>
+</html>
+
+
+

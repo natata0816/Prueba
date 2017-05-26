@@ -1,0 +1,37 @@
+MainBundle\Entity\Usuarios:
+    type: entity
+    table: null
+    repositoryClass: MainBundle\Repository\UsuariosRepository
+    id:
+        correo:
+            type: string
+            length: '90'
+            unique: true
+            column: Correo
+    fields:
+        pwd:
+            type: string
+            length: '250'
+            nullable: true
+        activo:
+            type: integer
+            column: Activo
+        tipoUsr:
+            type: integer
+            column: TipoUsr
+        nomUsr:
+            type: string
+            length: '90'
+            column: NomUsr
+        
+        actividad:
+            type: string
+            length: '90'
+            nullable: true
+            column: Actividad
+        rol:
+            type: string
+            length: '90'
+            nullable: true
+            column: Rol
+    lifecycleCallbacks: {  }

@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %} 
+{% block internanav %}
+ 
+<ol class="breadcrumb">
+  <li><a href="{{asset('app_dev.php/Area')}}">Area</a></li>
+  <li><a href="{{asset('app_dev.php/Area')}}">Listado</a></li>
+ </ol>
+ <br><br><br>
+  
+{% endblock %}
+{% block contenido %}
+
+
+<form class="col s10" style="margin:0% auto; max-width:800px;">
+<div class="card-panel z-depth-4">
+<div>
+        <span class="btn orange accent-4 z-depth-0">N° de Elementos: {{pagination.getTotalItemCount }}</span>
+    </div>
+<h3 class="thin" align="center">Listado de Areas</h3>
+<div class="center">
+ {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <span class="alert-success lime accent-3">
+
+        {{ flashMessage}}
+          
+          
+          </span>
+        {% endfor %}
+{% for flashMessage in app.session.flashbag.get('mensaje') %}
+<span class="alert-success">
+{{ flashMessage}}
+
+{% endfor %}
+<hr/>
+<table calss="responsive-table">
+        <thead>
+          <tr>
+              <th></th>
+              <th>Area</th>
+              <th>&nbsp&nbsp&nbsp Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for pagination in pagination  %}
+          <tr >
+            <td style="visibility:hidden;" > {{pagination.isarea}} </td>
+            <td> {{pagination.nomArea}} </td>
+            <td>
+              &nbsp &nbsp<a href="{{asset('app_dev.php/updarea')}}/{{(pagination.isarea)}}" class="btn btn-floating waves-effect waves-light btn  z-depth-4 tooltipped" data-position="left" data-delay="50" data-tooltip="Edita este registro"><i class="material-icons">mode_edit</i></a>&nbsp &nbsp &nbsp     
+              <a href="{{asset('app_dev.php/delarea')}}/{{(pagination.isarea)}}" class="btn btn-floating waves-effect waves-light btn red z-depth-4 tooltipped" data-position="right" data-delay="50" data-tooltip="Elimina este registro"><i class="material-icons">delete</i></a>
+            </td>
+          </tr>
+          {%  endfor %}
+        </tbody>
+      </table>
+       <div class="row">
+             {{ knp_pagination_render(pagination) }}
+          </div>
+      </form>
+
+      </div>
+
+
+      <div class="fixed-action-btn ">
+    <a href="{{asset('app_dev.php/addarea')}}" class="btn-floating btn-large waves-effect waves-light orange z-depth-4 "><i class="material-icons">add</i></a>  
+    </div>
+  
+{% endblock %}
+

@@ -1,0 +1,94 @@
+main_homepage:
+    path:     /
+    defaults: { _controller: MainBundle:Default:index }
+
+
+addusr:
+    path:     /addusr
+    defaults: { _controller: MainBundle:Default:addusr}
+
+usuario:
+    path:     /usuario
+    defaults: { _controller: MainBundle:Default:usuario }
+
+MenuA:
+    path:     /MenuA
+    defaults: { _controller: MainBundle:Default:MenuA }
+
+
+CloseSesion:
+    path:     /CerrarSesion
+    defaults: { _controller: MainBundle:Default:CerrarSesion }
+
+delusr:
+    path:     /delusr/{correo}
+    defaults: { _controller: MainBundle:Default:delusr }
+
+actusr:
+    path:     /actusr/{correo}
+    defaults: { _controller: MainBundle:Default:actusr }
+
+cliente:
+    path:     /cliente
+    defaults: { _controller: MainBundle:Default:cliente }
+
+addcte:
+    path:     /addcte
+    defaults: { _controller: MainBundle:Default:addcte }
+
+delcte:
+    path:     /delcte/{rFCCte}
+    defaults: { _controller: MainBundle:Default:delcte }
+
+updcte:
+    path:     /updcte/{rFCCte}
+    defaults: { _controller: MainBundle:Default:updcte }
+
+addtrat:
+    path:     /addtrat/
+    defaults: { _controller: MainBundle:Default:addtrat }
+
+tratamiento:
+    path:     /tratamiento/
+    defaults: { _controller: MainBundle:Default:tratamiento }
+
+
+deltrat:
+    path:     /deltrat/{idTrat}
+    defaults: { _controller: MainBundle:Default:deltrat }
+
+updtrat:
+    path:     /updtrat/{idTrat}
+    defaults: { _controller: MainBundle:Default:updtrat }
+
+Area:
+    path:     /Area
+    defaults: { _controller: MainBundle:Default:Area }
+
+addarea:
+    path:     /addarea/
+    defaults: { _controller: MainBundle:Default:addarea }
+
+delarea:
+    path:     /delarea/{isarea}
+    defaults: { _controller: MainBundle:Default:delarea }
+
+updarea:
+    path:     /updarea/{isarea}
+    defaults: { _controller: MainBundle:Default:updarea }
+
+tiposmate:
+    path:     /tiposmate
+    defaults: { _controller: MainBundle:Default:TipoMaterial }
+
+addtmat:
+    path:     /addtmat
+    defaults: { _controller: MainBundle:Default:addtmat }
+
+deltmat:
+    path:     /deltmat/{idTipoM}
+    defaults: { _controller: MainBundle:Default:deltmat }
+
+updtmat:
+    path:     /updtmat/{idTipoM}
+    defaults: { _controller: MainBundle:Default:updtmat }

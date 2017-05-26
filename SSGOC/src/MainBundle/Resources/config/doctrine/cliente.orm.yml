@@ -1,0 +1,44 @@
+MainBundle\Entity\cliente:
+    type: entity
+    table: null
+    repositoryClass: MainBundle\Repository\clienteRepository
+    id:
+        rFCCte:
+            rFCCte:
+            type: string
+            length: '15'
+            unique: true
+            column: RFC_Cte
+    fields:
+       
+        codCte:
+            type: string
+            length: '4'
+            unique: true
+            column: CodCte
+        nomCte:
+            type: string
+            length: '100'
+            column: Nom_Cte
+        razSoc:
+            type: string
+            length: '150'
+            nullable: true
+            unique: true
+            column: Raz_Soc
+        dirCte:
+            type: string
+            length: '150'
+            nullable: true
+            column: Dir_cte
+        telCte:
+            type: string
+            length: '11'
+            nullable: true
+            column: Tel_Cte
+        codPostCte:
+            type: string
+            length: '5'
+            nullable: true
+            column: Cod_PostCte
+    lifecycleCallbacks: {  }
